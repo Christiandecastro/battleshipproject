@@ -65,5 +65,17 @@ function fireTorpedo() {
 var userInput = $("#InputBox").val();
 
 	// Your game logic will go here!
+	var rowletter = userInput.substring(0,1);
+
+	var column = userInput.substring(1,2);
+
+	var columnConversion = rowletter - 1;
+
+	var row = letterConversion[rowletter] 
+		  var potato = 's' + row + columnConversion;
+			if(gameboard[row][column]) {
+
+			}
+	}
 
 }
