@@ -67,15 +67,17 @@ var userInput = $("#InputBox").val();
 	// Your game logic will go here!
 	var rowletter = userInput.substring(0,1);
 
-	var column = userInput.substring(1,2);
+	var column = userInput.substring(1,3);
 
-	var columnConversion = rowletter - 1;
+	var columnConversion = column - 1;
 
-	var row = letterConversion[rowletter] 
+	var row = letterConversion[rowletter];
 		  var potato = 's' + row + columnConversion;
-			if(gameboard[row][column]) {
-
+			if(gameboard[row][column] == 1) {
+        $("#" + potato).css("background-color", "red");
+			}else {
+				$("#" + potato).css("background-color", "grey");
 			}
-	}
+
 
 }
