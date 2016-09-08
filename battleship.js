@@ -60,24 +60,37 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
-function fireTorpedo() {
+var shipsHit  = 0;
 
-var userInput = $("#InputBox").val();
+function fireTorpedo()
+{ var gameOver = true;
 
-	// Your game logic will go here!
-	var rowletter = userInput.substring(0,1);
+	var userInput = $("Input").val();
+	var rowInput = userInput.substring(0,1);
+	var columnInput = userInput.substring(1,3);
 
-	var column = userInput.substring(1,3);
+	var rowNumber = letterConversion[rowInput];
+	var columnNumber = columnInput - 1;
+	var coordinates = "s" + rowNumber + columnNumber;
+	var battleship = gameBoard[rowNumber][columnNumber];
 
-	var columnConversion = column - 1;
+	if (battleship == 1)
+	{
+		$("#" + coordinates).css("background-color", "cyan");
+		shipsHit += 1;
+	}
+else {
+	$("#" + coordinates).css("background-color", "grey");
+}
 
-	var row = letterConversion[rowletter];
-		  var potato = 's' + row + columnConversion;
-			if(gameboard[row][column] == 1) {
-        $("#" + potato).css("background-color", "red");
-			}else {
-				$("#" + potato).css("background-color", "grey");
-			}
+console.log(coordinates);
 
+if(shipsHit == 1) {
+	gameOver = false;
+}
 
+if(gameOver){
+	$("#instructions").text("The squad just roasted you and now your ship sank.");
+	$("#inputBox").fadeOut();
+  }
 }
