@@ -63,7 +63,7 @@ var gameBoard = [
 var shipsHit  = 0;
 
 function fireTorpedo()
-{ var gameOver = true;
+{ var gameOver = false;
 
 	var userInput = $("Input").val();
 	var rowInput = userInput.substring(0,1);
@@ -86,7 +86,7 @@ else {
 console.log(coordinates);
 
 if(shipsHit == 1) {
-	gameOver = false;
+	gameOver = true;
 }
 
 if(gameOver){
