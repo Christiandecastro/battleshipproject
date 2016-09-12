@@ -2,6 +2,7 @@
 var rows = 10;
 var cols = 10;
 var squareSize = 50;
+var number = 0;
 
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -85,8 +86,9 @@ else {
 
 console.log(coordinates);
 
-if(shipsHit == 1) {
+if(shipsHit == 17) {
 	gameOver = true;
+	console.log("gameOver");
 }
 
 if(gameOver){
