@@ -92,7 +92,7 @@ if(shipsHit == 17) {
 }
 
 if(gameOver){
-	$("#instructions").text("The squad just roasted you and now your ship sank.");
+	$("#instructions").text("Congrats!! You've beat the game!");
 	$("#inputBox").fadeOut();
   }
 }
